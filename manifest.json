@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Plex Request Hub",
+  "version": "1.0",
+  "description": "Check your Plex library and request missing movies/TV shows via Overseerr.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "identity",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://plex.tv/*",
+    "*://*.imdb.com/*",
+    "*://*.thetvdb.com/*",
+    "*://*.wikipedia.org/*",
+    "*://www.google.com/search*",
+    "https://*/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.imdb.com/*",
+        "*://*.thetvdb.com/*",
+        "*://*.wikipedia.org/*",
+        "*://www.google.com/search*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}

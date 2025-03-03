@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Plex Request Hub - Sign In</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    button, select { padding: 10px 15px; font-size: 16px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Sign in with Plex</h2>
+  <button id="signInBtn">Sign In</button>
+  <div id="serverSelection" style="display:none; margin-top:20px;">
+    <label for="plexServerDropdown">Select your Plex Server:</label><br>
+    <select id="plexServerDropdown"></select><br>
+    <button id="saveServerBtn">Save Server</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
